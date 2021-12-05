@@ -10,12 +10,15 @@ import {
 } from "type-graphql";
 import { UserType as User } from "./userType";
 import { prismaClient } from "../../service/prismaClient";
+import {IsEmail, Length} from "class-validator"
 
 @InputType()
 class UserInput {
   @Field()
+  @Length(3,46)
   name!: string;
   @Field()
+  @IsEmail()
   email!: string;
 }
 
