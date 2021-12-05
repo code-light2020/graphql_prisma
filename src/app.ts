@@ -14,10 +14,11 @@ async function bootstrap() {
 
   const server = new ApolloServer({
     schema,
+    
   });
   await server.start()
   server.applyMiddleware({ app, path: "/api" });
-  app.listen(3333, () => console.log("is runnig"));
+  app.listen(3333, () => console.log(`🔥🔥🔥 GraphQL + Express auth tutorial listening on port 3333!`));
 }
 
 bootstrap()
